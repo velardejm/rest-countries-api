@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function RegionDropdown() {
   const [isOpen, setIsOpen] = useState(false);
+  const [region, setRegion] = useState('');
 
   const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
 
@@ -12,16 +13,17 @@ export default function RegionDropdown() {
   }
 
   function selectItem(e) {
-    console.log(e.target.innerText);
+    setRegion(e.target.innerText);
+    toggleDropdown();
   }
 
   return (
-    <div className="relative w-[50%]">
+    <div className="relative w-[50%] mb-8">
       <div
         className="flex items-center justify-between cursor-pointer bg-white mb-2 px-7 py-3 rounded"
         onClick={toggleDropdown}
       >
-        <span>Region</span>{" "}
+        <span>{region ? region : 'Region'}</span>{" "}
         <span>
           <FiChevronDown />
         </span>

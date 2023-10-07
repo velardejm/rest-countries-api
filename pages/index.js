@@ -1,13 +1,15 @@
-import CountryCard from "@/components/country-card/CountryCard";
+import Countries from "@/components/countries/Countries";
 import Header from "@/components/header/Header";
 import Search from "@/components/search/Search";
 
-export default function Home({ data }) {
+export default function Home({ countriesData }) {
+    
   return (
     <div className="bg-gray-100">
       <Header />
       <Search />
-      <CountryCard country={data[1]}/>
+      <Countries countriesData={countriesData}/>
+      {/* <CountryCard country={data[1]}/> */}
     </div>
   );
 }
@@ -19,7 +21,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data: data
+      countriesData: data
     },
   };
 }

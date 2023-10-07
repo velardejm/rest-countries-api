@@ -1,6 +1,6 @@
 export default function CountryCard({ country }) {
   return (
-    <div className='cursor-pointer rounded-b mx-20 bg-white'>
+    <div className='cursor-pointer rounded-b mx-20 bg-white mb-10'>
       <img className='rounded-t ' src={country.flags.svg}></img>
       <div className='py-8 px-6'>
         <h2 className='font-bold mb-3'>{country.name}</h2>
