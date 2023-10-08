@@ -1,15 +1,21 @@
+import { useState } from "react";
+
 import Countries from "@/components/countries/Countries";
 import Header from "@/components/header/Header";
 import Search from "@/components/search/Search";
 
 export default function Home({ countriesData }) {
-    
+  const [selectedRegion, setSelectedRegion] = useState('');
+
+  function selectRegion(region) {
+    setSelectedRegion(region);
+  }
+
   return (
     <div className="bg-gray-100">
       <Header />
-      <Search />
-      <Countries countriesData={countriesData}/>
-      {/* <CountryCard country={data[1]}/> */}
+      <Search selectRegion={selectRegion} />
+      <Countries countriesData={countriesData} selectedRegion={selectedRegion} />
     </div>
   );
 }

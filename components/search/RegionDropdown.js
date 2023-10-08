@@ -2,11 +2,11 @@ import { FiChevronDown } from "react-icons/fi";
 
 import { useState } from "react";
 
-export default function RegionDropdown() {
+export default function RegionDropdown({ selectRegion }) {
   const [isOpen, setIsOpen] = useState(false);
   const [region, setRegion] = useState('');
 
-  const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
+  const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   function toggleDropdown() {
     setIsOpen(!isOpen);
@@ -14,6 +14,7 @@ export default function RegionDropdown() {
 
   function selectItem(e) {
     setRegion(e.target.innerText);
+    selectRegion(e.target.innerText);
     toggleDropdown();
   }
 
