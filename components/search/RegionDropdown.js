@@ -34,7 +34,7 @@ export default function RegionDropdown({ selectRegion }) {
         <ul>
           {regions.map((region, index) => {
             return (
-              <li className="mb-1 last:mb-0" onClick={selectItem} key={index}>
+              <li className="mb-1 cursor-pointer last:mb-0" onClick={selectItem} key={index}>
                 {region}
               </li>
             );

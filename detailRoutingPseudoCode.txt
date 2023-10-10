@@ -1,0 +1,5 @@
+1. From home page, detail page will be loaded and query will be passed to detail page.
+2. From detail page, could go back to home page
+3. From detail page, if border country link is clicked, will be redirected yo home page where the countries data resides. 
+   A query with redirect=true will be passed to home page so it will immediately redirect to detail page of the clicked border country.
+   (This will avoid the need of loading the full countries data on each country detail page. The redirect will be almost instantaneous and will not be noticeable).
