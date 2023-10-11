@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Countries from "@/components/countries/Countries";
 import Header from "@/components/header/Header";
@@ -6,6 +6,12 @@ import Search from "@/components/search/Search";
 
 export default function Home({ countriesData }) {
   const [selectedRegion, setSelectedRegion] = useState('');
+
+
+  // useEffect(() => {
+  //   window.localStorage.setItem('countries', countriesData);
+  //   console.log(window.localStorage.countries);
+  // });
 
   function selectRegion(region) {
     setSelectedRegion(region);

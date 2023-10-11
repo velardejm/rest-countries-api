@@ -8,7 +8,7 @@ export default function Countries({ countriesData, selectedRegion }) {
                 if(country.region !== selectedRegion) {
                     return
                 } else {
-                    return <CountryCard country={country} key={index} />
+                    return <CountryCard country={country} index={index} key={index} />
                 }
                 
             })}

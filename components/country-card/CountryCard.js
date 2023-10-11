@@ -1,8 +1,9 @@
 import Link from "next/link";
 
-export default function CountryCard({ country }) {
+export default function CountryCard({ country, index }) {
+  
   return (
-    <Link href="/">
+    <Link href={`/detail/${index}`}>
       <div className='cursor-pointer rounded-b mx-20 bg-white mb-10'>
         <img className='rounded-t ' src={country.flags.svg}></img>
         <div className='py-8 px-6'>
