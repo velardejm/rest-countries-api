@@ -8,6 +8,7 @@ export default function CountryDetail({ countriesData }) {
 
     let country = countriesData[Number(router.query.country)];
 
+    console.log(country);
 
     return (
         <div>
@@ -19,7 +20,7 @@ export default function CountryDetail({ countriesData }) {
 
             <div className='py-8'>
                 <p className='mb-0.5'>
-                    <span>Native Name:</span> {country.population}
+                    <span>Native Name:</span> {country.nativeName}
                 </p>
                 <p className='mb-0.5'>
                     <span>Population:</span> {country.population}
@@ -28,28 +29,30 @@ export default function CountryDetail({ countriesData }) {
                     <span>Region:</span> {country.region}
                 </p>
                 <p className='mb-0.5'>
-                    <span>Sub Region:</span> {country.capital}
+                    <span>Sub Region:</span> {country.nativeName}
                 </p>
                 <p className='mb-0.5'>
-                    <span>Capital:</span> {country.population}
+                    <span>Capital:</span> {country.capital}
                 </p>
             </div>
 
-            <div className='py-8'>
+            {/* <div className='py-8'>
                 <p className='mb-0.5'>
-                    <span>Top Level Domain:</span> {country.population}
+                    <span>Top Level Domain:</span> {country.topLevelDomain}
                 </p>
                 <p className='mb-0.5'>
-                    <span>Currencies:</span> {country.population}
+                    <span>Currencies:</span> {country.currencies}
                 </p>
                 <p className='mb-0.5'>
-                    <span>Languages:</span> {country.region}
+                    <span>Languages:</span> {country.languages}
                 </p>
-            </div>
+            </div> */}
 
             <div>
                 <h3>Border Countries:</h3>
-                <div></div>
+                <div>
+
+                </div>
             </div>
         </div>
     )
