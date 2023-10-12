@@ -6,9 +6,24 @@ import Link from "next/link";
 export default function CountryDetail({ countriesData }) {
     const router = useRouter();
 
-    let country = countriesData[Number(router.query.country)];
+    const country = countriesData[Number(router.query.country)];
+    let currencies = '';
+    let languages = '';
+    let borders = [];
 
-    console.log(country);
+    country.languages.forEach((el, i, arr) => {
+        languages += `${el.name}${i < arr.length - 1 ? ', ' : ''}`;
+    });
+
+    country.currencies.forEach((el, i, arr) => {
+        currencies += `${el.code}${i < arr.length - 1 ? ', ' : ''}`;
+    });
+
+    if (country.borders) {
+        country.borders.forEach((el) => {
+            borders.push(el);
+        });
+    }
 
     return (
         <div>
@@ -36,17 +51,17 @@ export default function CountryDetail({ countriesData }) {
                 </p>
             </div>
 
-            {/* <div className='py-8'>
+            <div className='py-8'>
                 <p className='mb-0.5'>
                     <span>Top Level Domain:</span> {country.topLevelDomain}
                 </p>
                 <p className='mb-0.5'>
-                    <span>Currencies:</span> {country.currencies}
+                    <span>Currencies:</span> {currencies}
                 </p>
                 <p className='mb-0.5'>
-                    <span>Languages:</span> {country.languages}
+                    <span>Languages:</span> {languages}
                 </p>
-            </div> */}
+            </div>
 
             <div>
                 <h3>Border Countries:</h3>
