@@ -2,7 +2,7 @@ import { FiChevronDown } from "react-icons/fi";
 
 import { useState } from "react";
 
-export default function RegionDropdown({ selectRegion }) {
+export default function RegionDropdown({ selectRegion, selectedRegion }) {
   const [isOpen, setIsOpen] = useState(false);
   const [region, setRegion] = useState('');
 
@@ -24,7 +24,7 @@ export default function RegionDropdown({ selectRegion }) {
         className="flex items-center justify-between cursor-pointer bg-white mb-2 px-7 py-3 rounded"
         onClick={toggleDropdown}
       >
-        <span>{region ? region : 'Region'}</span>{" "}
+        <span>{selectedRegion ? selectedRegion : 'Region'}</span>{" "}
         <span>
           <FiChevronDown />
         </span>

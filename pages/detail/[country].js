@@ -25,9 +25,22 @@ export default function CountryDetail({ countriesData }) {
         });
     }
 
+    function handleClick(e) {
+        router.push({
+            pathname: '/',
+            query: {
+                region: country.region
+            }
+        }, '/')
+    }
+
     return (
         <div>
-            <Link href="/"><FaArrowLeft className="inline-block" /> Back</Link>
+            {/* <Link href="/"><FaArrowLeft className="inline-block" /> Back</Link> */}
+
+            <button onClick={handleClick}>
+                <FaArrowLeft className="inline-block" /> Back
+            </button>
 
             <img className='rounded-t ' src={country.flags.svg}></img>
 
