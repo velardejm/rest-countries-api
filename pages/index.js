@@ -8,17 +8,15 @@ import Search from "@/components/search/Search";
 
 export default function Home({ countriesData }) {
   const [selectedRegion, setSelectedRegion] = useState('');
+  const [previousSelecetedRegion, setPreviousSelectedRegion] = useState('');
   const router = useRouter();
 
   useEffect(() => {
-    if (router.query.region != selectRegion && router.query.region) {
+    if (router.query.region != previousSelecetedRegion && router.query.region) {
       setSelectedRegion(router.query.region);
+      setPreviousSelectedRegion(router.query.region);
     }
-
-    // alert("Side effect!");
-
-    console.log(router.query.region);
-  },[selectedRegion]);
+  },[previousSelecetedRegion]);
 
   function selectRegion(region) {
     setSelectedRegion(region);
