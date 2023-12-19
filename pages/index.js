@@ -1,32 +1,15 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-
 import Countries from "@/components/countries/Countries";
 import Header from "@/components/header/Header";
 import Search from "@/components/search/Search";
 
 
-export default function Home({ countriesData }) {
-  const [selectedRegion, setSelectedRegion] = useState('');
-  const [previousSelecetedRegion, setPreviousSelectedRegion] = useState('');
-  const router = useRouter();
-
-  useEffect(() => {
-    if (router.query.region != previousSelecetedRegion && router.query.region) {
-      setSelectedRegion(router.query.region);
-      setPreviousSelectedRegion(router.query.region);
-    }
-  },[previousSelecetedRegion]);
-
-  function selectRegion(region) {
-    setSelectedRegion(region);
-  }
+export default function Home({ countriesData, region, setRegion }) {
 
   return (
     <div className="bg-gray-100">
       <Header />
-      <Search selectRegion={selectRegion}  selectedRegion={selectedRegion}/>
-      <Countries countriesData={countriesData} selectedRegion={selectedRegion} />
+      <Search setRegion={setRegion} region={region} />
+      <Countries countriesData={countriesData} region={region} />
     </div>
   );
 }

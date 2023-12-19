@@ -38,9 +38,13 @@ export default function CountryDetail({ countriesData }) {
         <div>
             {/* <Link href="/"><FaArrowLeft className="inline-block" /> Back</Link> */}
 
-            <button onClick={handleClick}>
+            {/* <button onClick={handleClick}>
                 <FaArrowLeft className="inline-block" /> Back
-            </button>
+            </button> */}
+
+            <Link href="/">
+                <FaArrowLeft className="inline-block" /> Back
+            </Link>
 
             <img className='rounded-t ' src={country.flags.svg}></img>
 

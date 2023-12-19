@@ -1,11 +1,11 @@
 import CountryCard from "../country-card/CountryCard"
 
-export default function Countries({ countriesData, selectedRegion }) {
+export default function Countries({ countriesData, region }) {
 
     return (
         <div>
             {countriesData.map((country, index) => {
-                if(country.region !== selectedRegion) {
+                if(country.region !== region) {
                     return
                 } else {
                     return <CountryCard country={country} index={index} key={index} />
