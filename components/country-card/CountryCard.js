@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 export default function CountryCard({ country, index }) {
-  
+
   return (
-    <Link href={`/detail/${index}`}>
-      <div className='cursor-pointer rounded-b mx-20 bg-white mb-10'>
+    <div className="relative w-[calc(25vw*0.9)] mb-5">
+      <Link href={`/detail/${index}`} className="absolute w-[100%] h-[100%]"></Link>
+      <div className='cursor-pointer rounded-b bg-white'>
         <img className='rounded-t ' src={country.flags.svg}></img>
         <div className='py-8 px-6'>
           <h2 className='font-bold mb-3'>{country.name}</h2>
@@ -19,6 +20,6 @@ export default function CountryCard({ country, index }) {
           </p>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
